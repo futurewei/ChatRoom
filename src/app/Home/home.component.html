@@ -1,0 +1,101 @@
+<div *ngIf="!isLoggedIn">
+   <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Hello, Welcome to Let's Chat !</h1>
+        <p><a class="btn btn-primary btn-lg" routerLink='./about' role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Instant Conversation</h2>
+          <p> Let's Chat enables a real time chat with your friends. </p>
+        </div>
+        <div class="col-md-4">
+          <h2>Conversation History</h2>
+          <p>Let's Chat's secure database helps saving your previous dialog </p>
+       </div>
+        <div class="col-md-4">
+          <h2>Group Chat</h2>
+          <p>Let's Chat is not limited to one-one chat, but also allows Group chat. By signing into your facebook account, you can have chat with other signed user. </p>
+        </div>
+      </div>
+
+      <p>&copy; 2017 by Lai Wei. All rights reserved<p>
+</div>
+</div>
+
+<div class ="signinbtn">
+<button (click)="login()" class="btn btn-primary btn-lg" *ngIf="!isLoggedIn">Login</button>
+  <button (click)="logout()" class="btn btn-primary btn-lg" *ngIf="isLoggedIn">Logout</button>
+</div>
+<style>
+
+
+
+div.absolute {
+    position:fixed;
+    bottom: 0;
+    overflow-y: scroll;
+    border: 2px solid lightblue;
+    padding: 10px;
+    background-color:#e0e0eb;
+    opacity: 1;
+    width: 80%;
+    margin: 10px 30% 10px 11%;
+}
+
+.jumbotron{
+  padding: 13%;
+}
+
+.signinbtn {
+position: absolute;
+top: 2px;
+right: 10px;
+}
+
+.message{
+   font: italic bold 25px Georgia, serif;
+}
+
+</style>
+
+<div class ="absolute" *ngIf="isLoggedIn"> 
+  <input type="text" id="textArea" style="font-size:20pt; width:100%"   *ngIf="isLoggedIn" placeholder="Message" (keyup.enter)="sendMessage($event.target.value)" [(ngModel)]="msgVal" />
+</div>
+
+  <div *ngIf="isLoggedIn">  
+    <div class="container" *ngFor="let post of posts">
+      <div *ngIf = "post.name == currentName">
+        <div class = "well row">
+  
+          <div class = "col-sm-10   text-right message">
+              {{post.message}}
+              </div>
+
+           <div class = "col-sm-2  text-right" >
+                <strong style="font-size:20pt; color:#750699"> :{{post.name}} </strong>
+          </div>
+
+          </div>
+      </div>
+          <div *ngIf = "post.name != currentName">
+            <div class ="well row">
+        
+          <div class = "col-sm-2  text-left">
+                <strong style="font-size:20pt; font: italic">{{post.name}}:</strong>
+              </div>
+
+          <div class = "col-sm-10  text-left message">
+              <strong  style="font-size:20pt">{{post.message}}</strong>
+          </div>
+            </div>
+      </div>
+
+
+    </div>
+    </div>
