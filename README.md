@@ -1,5 +1,33 @@
 # ChatRoom
 
+The chatRoom project is implemented using AngularJS + Firebase by Lai Wei. It enables users to sign in/out through Facebook account, and allows real time conversation while keeping track of their conversation history.
+
+
+This is the Home page, User can sign in through the button on top right.
+![screenshot 2017-06-29 17 32 31](https://user-images.githubusercontent.com/13871858/27718775-f8f4bef6-5d02-11e7-8a33-a51e373e59a1.png)
+
+
+whoever is the current signed in user, his profile&message will be displayed on the right.
+
+![screenshot 2017-06-29 17 18 46](https://user-images.githubusercontent.com/13871858/27718795-0e9ae7d0-5d03-11e7-87cf-6bc6a77819e3.png)
+
+![screenshot 2017-06-29 17 32 13](https://user-images.githubusercontent.com/13871858/27718800-1c749252-5d03-11e7-934d-d9887aed0563.png)
+
+
+
+You can visit the website here:  https://futurewei.github.io/ChatRoom/
+
+
+
+
+
+
+
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
 
 ## Development server
