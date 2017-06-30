@@ -13,7 +13,12 @@ import {NavbarComponent} from './Navbar/navbar.component';
 import {HomeComponent} from './Home/home.component';
 
 export const firebaseConfig = {
-
+    apiKey: "AIzaSyCyGkoIBFEG5abEOfOfFHNtzLGW5pi_MUk",
+    authDomain: "chatroom-bb540.firebaseapp.com",
+    databaseURL: "https://chatroom-bb540.firebaseio.com",
+    projectId: "chatroom-bb540",
+    storageBucket: "chatroom-bb540.appspot.com",
+    messagingSenderId: "870270461311"
 }
 
 //now you need to import AngularFire module
